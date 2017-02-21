@@ -70,8 +70,8 @@ public class WeblogPreMR {
 		if(fs.exists(outPath)) {
 			fs.delete(outPath, true);
 		}*/
-		FileInputFormat.setInputPaths(job, new Path("F:\\change\\data\\clickflow\\pre_clear\\input"));
-		FileOutputFormat.setOutputPath(job, new Path("F:\\change\\data\\clickflow\\pre_clear\\output"));
+		FileInputFormat.setInputPaths(job, new Path("F:\\change\\demo_data\\mr\\click_flow\\clear\\input"));
+		FileOutputFormat.setOutputPath(job, new Path("F:\\change\\demo_data\\mr\\click_flow\\clear\\output"));
 		job.setNumReduceTasks(0);
 		boolean flag = job.waitForCompletion(true);
 		
