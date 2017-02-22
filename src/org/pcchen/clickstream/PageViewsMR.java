@@ -21,7 +21,6 @@ import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import org.pcchen.bean.PageViews;
 import org.pcchen.bean.WebLogBean;
 
 /** 
@@ -58,7 +57,6 @@ public class PageViewsMR {
 	}
 	
 	public static class PageViewsMRReduce extends Reducer<Text, WebLogBean, Text, NullWritable> {
-		private PageViews pageViews = new PageViews();
 		@Override
 		protected void reduce(Text key, Iterable<WebLogBean> iter, Context context) throws IOException, InterruptedException {
 			List<WebLogBean> webLogBeanList = new ArrayList<WebLogBean>();
